@@ -72,20 +72,63 @@ use loutrux\argon\widgets\Alert;
         <div class="main-content">
             <!-- Navbar -->
         <?php
-            $menuItems = [
-                ['label' => 'Dashboard', 'url' => ['/site/index']],
-            ];
-            $menuItems[] = '<li class="nav-item">'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout',
-                [
-                    'class' => 'nav-link border-none',
-                    'style' => 'background: none;'
-                ]
-            )
-            . Html::endForm()
-            . '</li>';
+            if(!Yii::$app->user->isGuest) {
+                if (Yii::$app->user->identity->role_id == 1) {
+                    $menuItems = [
+                        ['label' => 'Dashboard', 'url' => ['/site/index']],
+                        ['label' => 'Agama', 'url' => ['agama/index']],
+                        ['label' => 'Antrian Loket', 'url' => ['antrian-loket/index']],
+                        ['label' => 'Antrian Now', 'url' => ['antrian-now/index']],
+                        ['label' => 'Antrian Poli', 'url' => ['antrian-poli/index']],
+                        ['label' => 'Info', 'url' => ['info/index']],
+                        ['label' => 'Info Kategori', 'url' => ['info-kategori/index']],
+                        ['label' => 'jenis Pasien', 'url' => ['jenis-pasien/index']],
+                        ['label' => 'Pasien', 'url' => ['pasien/index']],
+                        ['label' => 'Pendidikan', 'url' => ['pendidikan/index']],
+                        ['label' => 'Poli', 'url' => ['poli/index']],
+                        ['label' => 'Rekam Medis', 'url' => ['rekam-medis/index']],
+                        ['label' => 'Role', 'url' => ['role/index']],
+                        ['label' => 'user', 'url' => ['user/index']],
+                    ];
+                }
+
+                if (Yii::$app->user->identity->role_id == 2) {
+                    $menuItems = [
+                        ['label' => 'Dashboard', 'url' => ['/site/index']],
+                        ['label' => 'Antrian Loket', 'url' => ['antrian-loket/index']],
+                        ['label' => 'Antrian Now', 'url' => ['antrian-now/index']],
+                        ['label' => 'Antrian Poli', 'url' => ['antrian-poli/index']],
+                        ['label' => 'Info', 'url' => ['info/index']],
+                        ['label' => 'Pasien', 'url' => ['pasien/index']],
+                    ];
+                }
+
+                if (Yii::$app->user->identity->role_id == 3) {
+                    $menuItems = [
+                        ['label' => 'Dashboard', 'url' => ['/site/index']],
+                        ['label' => 'Antrian Loket', 'url' => ['antrian-loket/index']],
+                        ['label' => 'Antrian Now', 'url' => ['antrian-now/index']],
+                        ['label' => 'Antrian Poli', 'url' => ['antrian-poli/index']],
+                    ];
+                }
+
+                if (Yii::$app->user->identity->role_id == 4) {
+                    
+                }
+
+
+                $menuItems[] = '<li class="nav-item">'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout',
+                    [
+                        'class' => 'nav-link border-none',
+                        'style' => 'background: none;'
+                    ]
+                )
+                . Html::endForm()
+                . '</li>';
+            }
 
                 // Dynamic menu item added in view with the 'additionalsMenuItems' block
                 if (($additionalsMenuItems = ArrayHelper::getValue($this->blocks,['additionalsMenuItems'])) !== null)

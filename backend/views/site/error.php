@@ -11,17 +11,18 @@ $this->title = $name;
 ?>
 <div class="site-error">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+    <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="col-sm-12 col-lg-9 align-self-center rounded-sm-2 shadow-lg p-lg-3 text-center text-white border border-white" style="background: linear-gradient(150deg, var(--indigo), var(--cyan), var(--purple) )">
+            <h1 class="display-1 text-white mb-lg-3" style="font-weight: 500!important; letter-spacing: 5px;">Opps!!!</h1>
+            <h1 class="text-white"><?= Html::encode($this->title) ?></h1>
+        
+            <div class="my-md-3">
+                <p class="fs-4">
+                    <?= nl2br(Html::encode($message)) ?>
+                </p>
+            </div>
+        </div>
     </div>
 
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
 
 </div>
