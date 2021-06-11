@@ -1,0 +1,40 @@
+body {
+	font-family: "PT Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	letter-spacing: 2px;
+	font-weight: 400 !important;
+}
+
+label {
+	font-weight: 800;
+}
+
+td {
+	font-size: 14px;
+}
+
+.navbar-brand {
+	font-weight: 400 !important;
+	font-size: 24px;
+	text-align: left;
+	letter-spacing: 2px;
+}
+
+.nav-link {
+	color: var(--dark) !important;
+}
+
+.nav-item:hover,
+.nav-item.active,
+.nav-item:hover a.nav-link,
+.nav-item.active a.nav-link {
+	background: var(--teal);
+	border-radius: var(--sm-1);
+	color: var(--white) !important;
+}
