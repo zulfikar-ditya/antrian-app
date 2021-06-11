@@ -1,7 +1,10 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
+$role = \common\models\Role::find()->all();
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Users */
@@ -33,7 +36,7 @@ use yii\widgets\ActiveForm;
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'role_id')->textInput() ?>
+                <?= $form->field($model, 'role_id')->dropDownList([ArrayHelper::map($role, 'id', 'nama')]) ?>
 
         </div>
                 <div class="col-md-6">

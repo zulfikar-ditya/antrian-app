@@ -1,8 +1,12 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$jenisPasien = \common\models\JenisPasien::find()->all();
+$pendidikan = \common\models\Pendidikan::find()->all();
+$agama = \common\models\Agama::find()->all();
 /* @var $this yii\web\View */
 /* @var $model common\models\Pasien */
 /* @var $form yii\widgets\ActiveForm */
@@ -17,15 +21,15 @@ use yii\widgets\ActiveForm;
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'jenis_pasien_id')->textInput() ?>
+                <?= $form->field($model, 'jenis_pasien_id')->dropDownList([ArrayHelper::map($jenisPasien, 'id', 'nama')]) ?>
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'no_bpjs')->textInput() ?>
+                <?= $form->field($model, 'no_bpjs')->textInput(['type' => 'number']) ?>
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'tgl_lahir')->textInput() ?>
+                <?= $form->field($model, 'tgl_lahir')->textInput(['type' => 'date']) ?>
 
         </div>
                 <div class="col-md-6">
@@ -37,7 +41,7 @@ use yii\widgets\ActiveForm;
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'pendidikan_id')->textInput() ?>
+                <?= $form->field($model, 'pendidikan_id')->dropDownList([ArrayHelper::map($pendidikan, 'id', 'nama')]) ?>
 
         </div>
                 <div class="col-md-6">
@@ -45,7 +49,7 @@ use yii\widgets\ActiveForm;
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'agama_id')->textInput() ?>
+                <?= $form->field($model, 'agama')->dropDownList([ArrayHelper::map($agama, 'id', 'nama')]) ?>
 
         </div>
                 <div class="col-md-6">
@@ -53,15 +57,15 @@ use yii\widgets\ActiveForm;
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'telepon')->textInput() ?>
+                <?= $form->field($model, 'telepon')->textInput(['type' => 'number']) ?>
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'tgl_masuk')->textInput() ?>
+                <?= $form->field($model, 'tgl_masuk')->textInput(['type' => 'date']) ?>
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'tgl_akhir')->textInput() ?>
+                <?= $form->field($model, 'tgl_akhir')->textInput(['type' => 'date']) ?>
 
         </div>
                 <div class="col-md-6">

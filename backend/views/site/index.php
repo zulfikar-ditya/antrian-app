@@ -61,7 +61,40 @@ if (Yii::$app->user->identity->role_id == 1) { ?>
         </div>
     </div>
 </div>
-<div class="bg-white shadow rounded-sm-2 p-md-1">
+    <?php } ?>
+    <?php 
+    if (Yii::$app->user->identity->role_id == 2) { ?>
+        <div class="bg-white shadow rounded-sm-2 p-md-1">
+            <div class="row justify-content-center">
+                <div class="col-md-4 p-3">
+                    <div class="card shadow rounded-sm-2 p-3 border border-cyan">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i data-feather="users" class="soft-bg-rose rounded-circle shadow text-rose p-2 border border-rose" style="width: 90px; height: 90px"></i>
+                                <div class="my-4">
+                                    <h3 class="mb-0">Users</h3>
+                                    <span class="mb-0 text-gray">50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <?= Html::a('Create', ['user/create'], $options = ['class' => 'btn btn-block bg-rose text-white border-white']) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <?php 
+    if (Yii::$app->user->identity->role_id == 3) { ?>
+
+    <?php } ?>
+    <?php 
+    if (Yii::$app->user->identity->role_id == 4) { ?>
+
+    <?php } ?>
+
+<div class="bg-white shadow rounded-sm-2 p-md-1 mt-5">
     <div class="row justify-content">
         <div class="col-md-3 p-2">
             <div class="card soft-bg-cyan shadow rounded-sm-2 p-3 border border-cyan">
@@ -185,16 +218,3 @@ if (Yii::$app->user->identity->role_id == 1) { ?>
         </div>
     </div>
 </div>
-    <?php } ?>
-    <?php 
-    if (Yii::$app->user->identity->role_id == 2) { ?>
-
-    <?php } ?>
-    <?php 
-    if (Yii::$app->user->identity->role_id == 3) { ?>
-
-    <?php } ?>
-    <?php 
-    if (Yii::$app->user->identity->role_id == 4) { ?>
-
-    <?php } ?>

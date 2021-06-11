@@ -1,7 +1,11 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
+$poli =  \common\models\Poli::find()->all();
+
 
 /* @var $this yii\web\View */
 /* @var $model common\models\AntrianLoket */
@@ -16,13 +20,13 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'urutan')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'tgl_antrian')->textInput() ?>
+            <?= $form->field($model, 'tgl_antrian')->textInput(['type' => 'date']) ?>
         </div>
         <div class="col-md-6">
             <?= $form->field($model, 'pasien_id')->textInput() ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'poli_id')->textInput() ?>
+            <?= $form->field($model, 'poli_id')->dropDownList([ArrayHelper::map($poli, 'id', 'nama')]) ?>
         </div>
         <div class="col-md-6">
             <?= $form->field($model, 'perkiraan_waktu')->textInput() ?>

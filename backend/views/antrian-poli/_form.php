@@ -1,8 +1,10 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$poli = \common\models\Poli::find()->all();
 /* @var $this yii\web\View */
 /* @var $model common\models\AntrianPoli */
 /* @var $form yii\widgets\ActiveForm */
@@ -17,7 +19,7 @@ use yii\widgets\ActiveForm;
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'tgl_antrian')->textInput() ?>
+                <?= $form->field($model, 'tgl_antrian')->textInput(['type'=> 'date']) ?>
 
         </div>
                 <div class="col-md-6">
@@ -25,7 +27,7 @@ use yii\widgets\ActiveForm;
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'poli_id')->textInput() ?>
+                <?= $form->field($model, 'poli_id')->dropDownList([ArrayHelper::map($poli, 'id', 'nama')]) ?>
 
         </div>
                 <div class="col-md-6">

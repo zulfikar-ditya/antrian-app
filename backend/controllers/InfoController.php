@@ -88,8 +88,15 @@ class InfoController extends Controller
     {
         $model = new Info();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $file = \yii\web\UploadedFile::getInstance($model, 'gambar');
+            $name = Yii::$app->security->generateRandomString().'.'.$file->getExtension();
+            $imagePath = '/images/info/'.$name;
+            $model->gambar = $imagePath;
+            $file->saveAs(Yii::getAlias('@frontend').'/web'.$imagePath);
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->getPrimaryKey()]);
+            }
         }
 
         return $this->render('create', [
@@ -107,8 +114,22 @@ class InfoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $oldImage = $model->gambar;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            if(\yii\web\UploadedFile::getInstance($model, 'gambar')) {
+                $file = \yii\web\UploadedFile::getInstance($model, 'gambar');
+                $name = Yii::$app->security->generateRandomString().'.'.$file->getExtension();
+                $imagePath = '/images/info/'.$name;
+                $model->gambar = $imagePath;
+                $file->saveAs(Yii::getAlias('@frontend').'/web'.$imagePath);
+                unlink(Yii::getAlias('@frontend').'/web'.$oldImage);
+            }
+            // echo '<pre>';
+            // return var_dump($model);
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->getPrimaryKey()]);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -126,8 +147,10 @@ class InfoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        $data = $this->findModel($id);
+        $oldImage = $data->gambar;
+        unlink(Yii::getAlias('@frontend').'/web'.$oldImage);
+        $data->delete();
         return $this->redirect(['index']);
     }
 

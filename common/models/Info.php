@@ -36,7 +36,7 @@ class Info extends \yii\db\ActiveRecord
             [['info_kategori_id'], 'integer'],
             [['detail_1', 'detail_2'], 'string'],
             [['judul'], 'string', 'max' => 50],
-            [['gambar'], 'string', 'max' => 255],
+            [['gambar'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg'],
             [['info_kategori_id'], 'exist', 'skipOnError' => true, 'targetClass' => InfoKategori::className(), 'targetAttribute' => ['info_kategori_id' => 'id']],
         ];
     }
