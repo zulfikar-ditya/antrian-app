@@ -14,12 +14,34 @@ use yii\filters\VerbFilter;
  */
 class PendidikanController extends Controller
 {
+    public function beforeAction($action) 
+    {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['site/login']);
+        } else {
+            Yii::$app->CheckRole->trigger(
+                \common\components\BackendMiddleware::CheckSuperuserOrNot
+            );
+            return true;
+        }
+    }
     /**
      * {@inheritdoc}
      */
     public function behaviors()
     {
         return [
+            \yii\behaviors\TimestampBehavior::className(),
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'create', 'view', 'update', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
