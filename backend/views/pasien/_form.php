@@ -7,6 +7,27 @@ use yii\widgets\ActiveForm;
 $jenisPasien = \common\models\JenisPasien::find()->all();
 $pendidikan = \common\models\Pendidikan::find()->all();
 $agama = \common\models\Agama::find()->all();
+$status = [
+    [
+        'status' => 'Laki-Laki',
+        'id' => 0
+    ],
+    [
+        'status' => 'Perempuan',
+        'id' => 1
+    ]
+];
+
+$statusKawin = [
+    [
+        'status' => 'Belum',
+        'id' => 0
+    ],
+    [
+        'status' => 'Sudah',
+        'id' => 1
+    ]
+];
 /* @var $this yii\web\View */
 /* @var $model common\models\Pasien */
 /* @var $form yii\widgets\ActiveForm */
@@ -33,7 +54,7 @@ $agama = \common\models\Agama::find()->all();
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'jenis_kelamin')->textInput() ?>
+                <?= $form->field($model, 'jenis_kelamin')->dropDownList([ArrayHelper::map($status, 'id', 'status')]) ?>
 
         </div>
                 <div class="col-md-6">
@@ -53,7 +74,7 @@ $agama = \common\models\Agama::find()->all();
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'status_pernikahan')->textInput() ?>
+                <?= $form->field($model, 'status_pernikahan')->dropDownList([ArrayHelper::map($statusKawin, 'id', 'status')]) ?>
 
         </div>
                 <div class="col-md-6">
