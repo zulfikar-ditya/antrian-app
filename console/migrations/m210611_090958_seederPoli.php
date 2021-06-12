@@ -14,6 +14,10 @@ class m210611_090958_seederPoli extends Migration
     public function safeUp()
     {
         $poli = new Poli();
+        $poli->nama = 'Loket Pendaftaran';
+        $poli->save();
+
+        $poli = new Poli();
         $poli->nama = 'Poli Umum';
         $poli->save();
 

@@ -7,6 +7,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
 
+use common\models\AntrianNow;
 /**
  * Site controller
  */
@@ -26,7 +27,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'update-antrian-poli', 'update-antrian-loket'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -60,7 +61,24 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $antrian = new AntrianNow();
+        $data = $antrian->getAntrianNowUntukHariIni();
+        // $antrian->setAntrianNowHariIni(AntrianNow::find()->where(['tgl' => Date('Y-m-d')])->one());
+        return $this->render('index', ['antrian' => $data]);
+    }
+
+    public function actionUpdateAntrianPoli($poli_id)
+    {
+        $antrian = new AntrianNow();
+        $antrian->updateAntrianPoli($poli_id);
+        return $this->redirect(['site/index']);
+    }
+
+    public function actionUpdateAntrianLoket()
+    {
+        $antrian = new AntrianNow();
+        $antrian->updateAntrianLoket();
+        return $this->resirect(['site/index']);
     }
 
     /**
