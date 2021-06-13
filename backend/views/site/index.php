@@ -36,7 +36,7 @@ if (Yii::$app->user->identity->role_id == 1) { ?>
             <div class="card shadow rounded-sm-2 p-3 border border-emarald">
                 <div class="card-body">
                     <div class="text-center">
-                        <i data-feather="users" class="soft-bg-emarald rounded-circle shadow text-emarald p-2 border border-emarald" style="width: 90px; height: 90px"></i>
+                        <i data-feather="user-check" class="soft-bg-emarald rounded-circle shadow text-emarald p-2 border border-emarald" style="width: 90px; height: 90px"></i>
                         <div class="my-4">
                             <h3 class="mb-0">Pasien</h3>
                             <span class="mb-0 text-gray"><?= $pasien ?></span>
@@ -52,7 +52,7 @@ if (Yii::$app->user->identity->role_id == 1) { ?>
             <div class="card shadow rounded-sm-2 p-3 border border-amber">
                 <div class="card-body">
                     <div class="text-center">
-                        <i data-feather="users" class="soft-bg-amber rounded-circle shadow text-amber p-2 border border-amber" style="width: 90px; height: 90px"></i>
+                        <i data-feather="list" class="soft-bg-amber rounded-circle shadow text-amber p-2 border border-amber" style="width: 90px; height: 90px"></i>
                         <div class="my-4">
                             <h3 class="mb-0">Poli</h3>
                             <span class="mb-0 text-gray"><?= $poli?></span>

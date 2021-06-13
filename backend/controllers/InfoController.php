@@ -123,7 +123,11 @@ class InfoController extends Controller
                 $imagePath = '/images/info/'.$name;
                 $model->gambar = $imagePath;
                 $file->saveAs(Yii::getAlias('@frontend').'/web'.$imagePath);
-                unlink(Yii::getAlias('@frontend').'/web'.$oldImage);
+                try {
+                    unlink(Yii::getAlias('@frontend').'/web'.$oldImage);
+                } catch (\Exception $e) {
+
+                }
             }
             // echo '<pre>';
             // return var_dump($model);

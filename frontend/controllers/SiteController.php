@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Info;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -74,7 +75,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $landing = Info::find()->where(['info_kategori_id' => 5])->orderBy(['id' => SORT_DESC])->one();
+        $poli_layanan = Info::find()->where(['info_kategori_id' => 6])->all();
+        $misi = Info::find()->where(['info_kategori_id' => 3])->orderBy(['id' => SORT_DESC])->one();
+        $visi = Info::find()->where(['info_kategori_id' => 1])->orderBy(['id' => SORT_DESC])->one();
+        $layanan_pro = Info::find()->where(['info_kategori_id' => 7])->orderBy(['id' => SORT_DESC])->all();
+        return $this->render('index', [
+            'landing' => $landing,
+            'poli_layanan' => $poli_layanan,
+            'misi' => $misi,
+            'visi' => $visi,
+            'layanan_pro' => $layanan_pro,
+        ]);
     }
 
     /**
