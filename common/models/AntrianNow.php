@@ -97,14 +97,14 @@ class AntrianNow extends \yii\db\ActiveRecord
         foreach ($this->column_database as $item => $value) 
         {
             $oldValue = $data->$item;
-            if($item == 'loket_pendaftaran') {
+            // if($item == 'loket_pendaftaran') {
                 $data->$item = $this->getAntrianLoket();
-            } else {
+            // } else {
                 $data->$item = $this->getAntrianPoli($value);
                 if($data->$item == null) {
                     $data->$item = $oldValue;
                 }
-            }
+            // }
         }
         $data->save();
         return true;

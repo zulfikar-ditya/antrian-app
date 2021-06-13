@@ -66,4 +66,13 @@ class AntrianPoli extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Poli::className(), ['id' => 'poli_id']);
     }
+
+    public function getSetUrutanTerakhir($date)
+    {
+        $data = AntrianPoli::find()->where([
+            'tgl_antrian' => $date,
+        ])->orderBy(['id' => SORT_DESC])->one();
+        $urutanTerakhir = $data->urutan;
+        return $urutanTerakhir += 1;
+    }
 }

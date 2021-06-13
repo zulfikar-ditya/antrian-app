@@ -20,6 +20,7 @@ class AntrianController extends Controller
                 if (Yii::$app->request->isPost) {
                     $antrian->load(Yii::$app->request->post(), 'Antrian');
                     $antrian->pasien_id = $this->checkPasienOrNot()['data']['id'];
+                    $antrian->urutan = (string)$antrian->getSetUrutanTerakhir($antrian->tgl_antrian);
                     $antrian->save();
                     if ($antrian->hasErrors()) {
                         return [
