@@ -17,7 +17,7 @@ class InformasiController extends Controller
         if($kategori == null) {
             return [
                 'success' => false, 
-                'message' => 'Kategori Not Found',
+                'message' => 'Kategori tidak ditemukan.',
                 'data' => null,
             ];
         }
@@ -25,7 +25,7 @@ class InformasiController extends Controller
         if ($data == null) {
             return [
                 'success' => false,
-                'message' => 'Data Not Found',
+                'message' => 'Data tidak ditemukan',
                 'data' => null
             ];
         }

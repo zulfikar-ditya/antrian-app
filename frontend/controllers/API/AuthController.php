@@ -13,7 +13,7 @@ class AuthController extends Controller
         Yii::$app->response->format = \yii\web\response::FORMAT_JSON;
         if (!Yii::$app->user->isGuest) {
             return [
-                'message' => 'Anda sudah Login',
+                'message' => 'Anda sudah login.',
                 'success' => false
             ];
         }
@@ -36,7 +36,7 @@ class AuthController extends Controller
         } else {
             return [
                 'success' => false,
-                'message' => 'Method Not Allowed',
+                'message' => 'Method Not Allowed.',
             ];
         }
     }
@@ -47,12 +47,12 @@ class AuthController extends Controller
         if(Yii::$app->user->isGuest) {
             return [
                 'success' => false,
-                'message' => 'Not Login',
+                'message' => 'Anda belum login.',
             ];
         } else {
             return [
                 'success' => true,
-                'message' => 'Login',
+                'message' => 'Anda Sudah login.',
             ];
         }
     }
@@ -64,13 +64,13 @@ class AuthController extends Controller
             if($login_status['success'] == false) {
                 return [
                     'success' => false,
-                    'message' => 'Anda belum login',
+                    'message' => 'Anda belum login.',
                 ];
             }
             Yii::$app->user->logout();
             return [
                 'success' => false,
-                'message' => 'Anda Sudah Logout'
+                'message' => 'Anda berhasil logout.'
             ];
         } else {
             return [
