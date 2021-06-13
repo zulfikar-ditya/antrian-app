@@ -43,7 +43,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'tgl_akhir') ?>
 
-    <?php // echo $form->field($model, 'token') ?>
+    <?php // echo $form->field($model, 'user_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

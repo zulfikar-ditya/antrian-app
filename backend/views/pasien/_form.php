@@ -90,7 +90,7 @@ $statusKawin = [
 
         </div>
                 <div class="col-md-6">
-                <?= $form->field($model, 'token')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'user_id')->textInput(['type' => 'number']) ?>
 
         </div>
             </div>

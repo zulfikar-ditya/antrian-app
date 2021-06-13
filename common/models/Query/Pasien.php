@@ -17,8 +17,8 @@ class Pasien extends PasienModel
     public function rules()
     {
         return [
-            [['id', 'jenis_pasien_id', 'no_bpjs', 'jenis_kelamin', 'pendidikan_id', 'agama_id', 'status_pernikahan', 'telepon'], 'integer'],
-            [['nama', 'tgl_lahir', 'alamat', 'pekerjaan', 'tgl_masuk', 'tgl_akhir', 'token'], 'safe'],
+            [['id', 'jenis_pasien_id', 'no_bpjs', 'jenis_kelamin', 'pendidikan_id', 'agama_id', 'status_pernikahan', 'telepon', 'user_id'], 'integer'],
+            [['nama', 'tgl_lahir', 'alamat', 'pekerjaan', 'tgl_masuk', 'tgl_akhir'], 'safe'],
         ];
     }
 
@@ -69,12 +69,12 @@ class Pasien extends PasienModel
             'telepon' => $this->telepon,
             'tgl_masuk' => $this->tgl_masuk,
             'tgl_akhir' => $this->tgl_akhir,
+            'user_id' => $this->user_id,
         ]);
 
         $query->andFilterWhere(['like', 'nama', $this->nama])
             ->andFilterWhere(['like', 'alamat', $this->alamat])
-            ->andFilterWhere(['like', 'pekerjaan', $this->pekerjaan])
-            ->andFilterWhere(['like', 'token', $this->token]);
+            ->andFilterWhere(['like', 'pekerjaan', $this->pekerjaan]);
 
         return $dataProvider;
     }

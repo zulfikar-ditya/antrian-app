@@ -21,8 +21,9 @@ use Yii;
  * @property int|null $telepon
  * @property string|null $tgl_masuk
  * @property string|null $tgl_akhir
- * @property string|null $token
+ * @property int|null $user_id
  *
+ * @property User $user
  * @property Agama $agama
  * @property JenisPasien $jenisPasien
  * @property Pendidikan $pendidikan
@@ -45,11 +46,11 @@ class Pasien extends \yii\db\ActiveRecord
     {
         return [
             [['jenis_pasien_id'], 'required'],
-            [['jenis_pasien_id', 'no_bpjs', 'jenis_kelamin', 'pendidikan_id', 'agama_id', 'status_pernikahan', 'telepon'], 'integer'],
+            [['jenis_pasien_id', 'no_bpjs', 'jenis_kelamin', 'pendidikan_id', 'agama_id', 'status_pernikahan', 'telepon', 'user_id'], 'integer'],
             [['tgl_lahir', 'tgl_masuk', 'tgl_akhir'], 'safe'],
             [['nama', 'alamat'], 'string', 'max' => 50],
             [['pekerjaan'], 'string', 'max' => 25],
-            [['token'], 'string', 'max' => 200],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['agama_id'], 'exist', 'skipOnError' => true, 'targetClass' => Agama::className(), 'targetAttribute' => ['agama_id' => 'id']],
             [['jenis_pasien_id'], 'exist', 'skipOnError' => true, 'targetClass' => JenisPasien::className(), 'targetAttribute' => ['jenis_pasien_id' => 'id']],
             [['pendidikan_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pendidikan::className(), 'targetAttribute' => ['pendidikan_id' => 'id']],
@@ -64,20 +65,30 @@ class Pasien extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nama' => 'Nama',
-            'jenis_pasien_id' => 'Jenis Pasien ID',
+            'jenis_pasien_id' => 'Jenis Pasien',
             'no_bpjs' => 'No Bpjs',
             'tgl_lahir' => 'Tgl Lahir',
             'jenis_kelamin' => 'Jenis Kelamin',
             'alamat' => 'Alamat',
-            'pendidikan_id' => 'Pendidikan ID',
+            'pendidikan_id' => 'Pendidikan',
             'pekerjaan' => 'Pekerjaan',
             'agama_id' => 'Agama ID',
             'status_pernikahan' => 'Status Pernikahan',
             'telepon' => 'Telepon',
             'tgl_masuk' => 'Tgl Masuk',
             'tgl_akhir' => 'Tgl Akhir',
-            'token' => 'Token',
+            'user_id' => 'User ID',
         ];
+    }
+
+    /**
+     * Gets query for [[User]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     /**

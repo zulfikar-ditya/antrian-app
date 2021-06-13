@@ -17,7 +17,7 @@ class AntrianPoli extends AntrianPoliModel
     public function rules()
     {
         return [
-            [['id', 'pasien_id', 'poli_id', 'status'], 'integer'],
+            [['id', 'pasien_id', 'poli_id', 'status', 'user_id'], 'integer'],
             [['urutan', 'tgl_antrian', 'perkiraan_waktu'], 'safe'],
         ];
     }

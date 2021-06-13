@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'telepon',
             'tgl_masuk',
             'tgl_akhir',
-            'token',
+            'user_id',
         ],
     ]) ?>
 
