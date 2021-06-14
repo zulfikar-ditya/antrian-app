@@ -4,7 +4,7 @@ $this->title = 'Antrian -'
 <div class="container-lg my-5">
     <div class="bg-white shadow rounded-sm-2 p-md-3 mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-rose shadow rounded-sm-2 p-3 border border-rose">
                     <h6 class="fw-light mb-0 text-rose" style="letter-spacing: 0px;">Loket Pendaftaran</h6>
                     <div class="my-3">
@@ -16,7 +16,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-orange shadow rounded-sm-2 p-3 border border-orange">
                     <h6 class="fw-light mb-0 text-orange" style="letter-spacing: 0px;">Poli Umum</h6>
                     <div class="my-3">
@@ -28,7 +28,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-yellow shadow rounded-sm-2 p-3 border border-yellow">
                     <h6 class="fw-light mb-0 text-yellow" style="letter-spacing: 0px;">Poli Gigi</h6>
                     <div class="my-3">
@@ -52,7 +52,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-emarald shadow rounded-sm-2 p-3 border border-emarald">
                     <h6 class="fw-light mb-0 text-emarald" style="letter-spacing: 0px;">Poli Kandungan</h6>
                     <div class="my-3">
@@ -64,7 +64,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-teal shadow rounded-sm-2 p-3 border border-teal">
                     <h6 class="fw-light mb-0 text-teal" style="letter-spacing: 0px;">Poli Kb</h6>
                     <div class="my-3">
@@ -76,7 +76,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-light-blue shadow rounded-sm-2 p-3 border border-light-blue">
                     <h6 class="fw-light mb-0 text-light-blue" style="letter-spacing: 0px;">Poli MTBS</h6>
                     <div class="my-3">
@@ -88,7 +88,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-indigo shadow rounded-sm-2 p-3 border border-indigo">
                     <h6 class="fw-light mb-0 text-indigo" style="letter-spacing: 0px;">Poli Jiwa</h6>
                     <div class="my-3">
@@ -100,7 +100,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-violet shadow rounded-sm-2 p-3 border border-violet">
                     <h6 class="fw-light mb-0 text-violet" style="letter-spacing: 0px;">Poli Lansia</h6>
                     <div class="my-3">
@@ -112,7 +112,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-purple shadow rounded-sm-2 p-3 border border-purple">
                     <h6 class="fw-light mb-0 text-purple" style="letter-spacing: 0px;">Imunisasi</h6>
                     <div class="my-3">
@@ -124,7 +124,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-fuchsia shadow rounded-sm-2 p-3 border border-fuchsia">
                     <h6 class="fw-light mb-0 text-fuchsia" style="letter-spacing: 0px;">Labolatorium</h6>
                     <div class="my-3">
@@ -136,7 +136,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-pink shadow rounded-sm-2 p-3 border border-pink">
                     <h6 class="fw-light mb-0 text-pink" style="letter-spacing: 0px;">Pojok Gizi</h6>
                     <div class="my-3">
@@ -148,7 +148,7 @@ $this->title = 'Antrian -'
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2" data-aos="fade-up">
                 <div class="card soft-bg-rose shadow rounded-sm-2 p-3 border border-rose">
                     <h6 class="fw-light mb-0 text-rose" style="letter-spacing: 0px;">Klinik Sanitasi</h6>
                     <div class="my-3">

@@ -57,7 +57,7 @@ AppAsset::register($this);
                                     <a class="nav-link active" aria-current="page" href="<?= Url::to(['site/signup'], $schema = true) ?>">Sign Up</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active border border-white rounded-sm-2" aria-current="page" href="<?= Url::to(['site/login'], $schema = true) ?>">Sign In</a>
+                                    <a class="nav-link active border border-white rounded-sm-2 px-2" aria-current="page" href="<?= Url::to(['site/login'], $schema = true) ?>">Sign In</a>
                                 </li>
                             <?php } else{ ?>
                                 <li class="nav-item">
@@ -65,7 +65,7 @@ AppAsset::register($this);
                                 </li>
                                 <li class="nav-item">
                                     <?= Html::a('Logout', ['site/logout',], [
-                                        'class' => 'nav-link active border border-white rounded-sm-2',
+                                        'class' => 'nav-link active border border-white rounded-sm-2 px-2',
                                         // 'data' => [
                                         //     'method' => 'post',
                                         // ],

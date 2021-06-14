@@ -14,6 +14,7 @@ $this->title = 'Home - ';
                 <h1 class="mb-0 fw-light" style="letter-spacing: 4px;"><?= $landing->judul ?></h1>
                 <hr class="border border-teal">
                 <p><?= $landing->detail_1 ?></p>
+                <?php  if (Yii::$app->user->isGuest) { ?>
                 <div class="row">
                     <div class="col-md-6 p-2">
                         <a href="#" class="btn fs-6 fw-light py-2 w-100 bg-teal border border-white text-white">Sign In</a>
@@ -22,6 +23,7 @@ $this->title = 'Home - ';
                         <a href="#" class="btn fs-6 fw-light py-2 w-100 btn-outline-primary">Sign up</a>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>
