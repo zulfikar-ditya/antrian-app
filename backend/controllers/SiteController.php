@@ -78,7 +78,7 @@ class SiteController extends Controller
     {
         $antrian = new AntrianNow();
         $antrian->updateAntrianLoket();
-        return $this->resirect(['site/index']);
+        return $this->residect(['site/index']);
     }
 
     /**
