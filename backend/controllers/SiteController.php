@@ -74,13 +74,6 @@ class SiteController extends Controller
         return $this->redirect(['site/index']);
     }
 
-    public function actionUpdateAntrianLoket()
-    {
-        $antrian = new AntrianNow();
-        $antrian->updateAntrianLoket();
-        return $this->residect(['site/index']);
-    }
-
     /**
      * Login action.
      *

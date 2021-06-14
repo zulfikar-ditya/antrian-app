@@ -1,8 +1,8 @@
 <?php
 $this->title = 'Antrian -'
 ?>
-<div class="container-lg p-3">
-    <div class="bg-white shadow rounded-sm-2 p-md-1 mt-5">
+<div class="container-lg my-5">
+    <div class="bg-white shadow rounded-sm-2 p-md-3 mt-5">
         <div class="row justify-content-center">
             <div class="col-md-3 p-2">
                 <div class="card soft-bg-rose shadow rounded-sm-2 p-3 border border-rose">

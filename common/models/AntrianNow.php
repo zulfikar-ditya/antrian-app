@@ -98,7 +98,7 @@ class AntrianNow extends \yii\db\ActiveRecord
         {
             $oldValue = $data->$item;
             // if($item == 'loket_pendaftaran') {
-                $data->$item = $this->getAntrianLoket();
+                // $data->$item = $this->getAntrianLoket();
             // } else {
                 $data->$item = $this->getAntrianPoli($value);
                 if($data->$item == null) {

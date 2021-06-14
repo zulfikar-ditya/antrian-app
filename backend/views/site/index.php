@@ -111,7 +111,7 @@ if (Yii::$app->user->identity->role_id == 1) { ?>
                     <h3 class="mb-0"><?php echo $antrian->loket_pendaftaran; ?></h3>
                     <small class="text-gray mb-0">Antrian Sekarang</small>
                 </div>
-                <a href="<?= Url::to(['site/update-antrian-loket'], $schema = true) ?>" class="btn btn-block bg-rose rounded-sm-2 border-white text-white">Next</a>
+                <a href="<?= Url::to(['site/update-antrian-poli?poli_id='.'1'], $schema = true) ?>" class="btn btn-block bg-rose rounded-sm-2 border-white text-white">Next</a>
             </div>
         </div>
         <div class="col-md-3 p-2">
